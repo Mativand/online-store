@@ -1,4 +1,4 @@
-import {ADMIN_ROUTE, AUTH_ROUTE, CART_ROUTE, PRODUCTS_ROUTE} from "@/shared/utils/consts.ts";
+import {ADMIN_ROUTE, AUTH_ROUTE, CART_ROUTE, PRODUCTS_ROUTE, REGISTRATION_ROUTE} from "@/shared/utils/consts.ts";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import {useContext} from "react";
 import {AppContext} from "@/app";
@@ -8,6 +8,7 @@ import {Admin}      from "./admin";
 import {Auth}       from "./auth";
 import {Products}   from "./products";
 import {Cart}       from "./cart";
+import {Registration} from "@/pages/registration";
 
 export const Routing = () => {
     const {user} = useContext(AppContext) || {};
@@ -20,22 +21,26 @@ export const Routing = () => {
         },
         {
             path: AUTH_ROUTE,
-            element: <Auth/>,
+            element: <Auth/>
+        },
+        {
+            path: REGISTRATION_ROUTE,
+            element: <Registration/>
         },
         {
             path: PRODUCTS_ROUTE,
-            element: <Products/>,
+            element: <Products/>
         },
         {
             path: CART_ROUTE,
-            element: <Cart/>,
+            element: <Cart/>
         },
     ];
 
     const authRoutes = [
         {
             path: ADMIN_ROUTE,
-            element: <Admin/>,
+            element: <Admin/>
         },
     ];
 
