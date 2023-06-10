@@ -1,10 +1,10 @@
 import {FC} from 'react';
-import {Header} from "@/widgets/header/ui";
+import {Sidebar} from "@/widgets/sidebar";
 
 export const Home: FC = () => {
     return (
         <div>
-            <Header/>
+            <Sidebar/>
         </div>
     );
 };

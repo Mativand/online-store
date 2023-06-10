@@ -11,7 +11,7 @@ import {Cart}       from "./cart";
 import {Registration} from "@/pages/registration";
 
 export const Routing = () => {
-    const {user} = useContext(AppContext) || {};
+    const {user} = useContext(AppContext);
 
     const routes = [
         {

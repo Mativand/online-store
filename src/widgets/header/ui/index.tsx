@@ -1,10 +1,10 @@
 import {FC, useContext} from "react";
-import {AppContext} from "../../../app";
+import {AppContext} from "@/app";
 import {observer} from "mobx-react-lite";
 
 
 export const Header: FC = observer(() => {
-    const {user} = useContext(AppContext) || {};
+    const {user} = useContext(AppContext);
     return (
         <>
             {
