@@ -5,7 +5,7 @@ interface IUser {
     name: string;
 }
 
-export default class UserStore {
+export class UserStore {
      _isAuth: boolean;
      _user: IUser | null;
     constructor() {

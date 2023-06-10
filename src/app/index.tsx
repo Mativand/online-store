@@ -1,11 +1,21 @@
-import React, {FC} from 'react';
-import {Routing} from "../pages";
+import { createContext, FC } from 'react';
 import './index.scss';
+import { Routing } from '@/pages';
+import {UserStore} from '@/entities/user';
+
+
+interface AppContextProps {
+    user: UserStore;
+}
+
+export const AppContext = createContext<AppContextProps | null>(null);
 
 export const App: FC = () => {
+    const userStore = new UserStore();
+
     return (
-        <React.StrictMode>
+        <AppContext.Provider value={{ user: userStore }}>
             <Routing/>
-        </React.StrictMode>
+        </AppContext.Provider>
     );
 };

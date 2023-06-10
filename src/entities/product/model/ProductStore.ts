@@ -1,6 +1,6 @@
 import {makeAutoObservable} from "mobx";
 
-export default class ProductStore {
+export class ProductStore {
      _types: string[];
      _sizes: string[];
 
