@@ -3,12 +3,14 @@ import {makeAutoObservable} from "mobx";
 export class ProductStore {
      _types: string[];
      _sizes: string[];
+     _products: string[];
     _selectedType: string;
     _selectedSize: string;
 
     constructor() {
         this._types = ['Кроссовки', 'Сникеры', 'Аксессуары'];
         this._sizes = ['39', '40', '41'];
+        this._products = ['Кроссовки 1', 'Кроссовки 2', 'Кроссовки 3'];
         this._selectedType = 'Кроссовки';
         this._selectedSize = '41';
         makeAutoObservable(this)
@@ -20,6 +22,10 @@ export class ProductStore {
 
     setSizes(sizes: string[]) {
         this._sizes = sizes;
+    }
+
+    setProducts(products: string[]) {
+        this._products = products;
     }
 
     setSelectedType(type: string) {
@@ -37,6 +43,10 @@ export class ProductStore {
 
     sizes() {
         return this._sizes;
+    }
+
+    products() {
+        return this._products;
     }
 
     selectedType() {
