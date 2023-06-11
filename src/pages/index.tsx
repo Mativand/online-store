@@ -9,6 +9,7 @@ import {Auth}       from "./auth";
 import {Products}   from "./products";
 import {Cart}       from "./cart";
 import {Registration} from "@/pages/registration";
+import {Product} from "@/pages/product";
 
 export const Routing = () => {
     const {user} = useContext(AppContext);
@@ -30,6 +31,10 @@ export const Routing = () => {
         {
             path: PRODUCTS_ROUTE,
             element: <Products/>
+        },
+        {
+            path: PRODUCTS_ROUTE + '/:id',
+            element: <Product/>
         },
         {
             path: CART_ROUTE,
