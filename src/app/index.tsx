@@ -1,9 +1,8 @@
 import { createContext, FC } from 'react';
 import './index.scss';
-import { Routing } from '@/pages';
 import {UserStore} from '@/entities/user';
 import {ProductStore} from "@/entities/product";
-import {Header} from "@/widgets/header";
+import {Routing} from "@/app/Routing.tsx";
 
 
 interface AppContextProps {
@@ -20,7 +19,6 @@ export const App: FC = () => {
         <AppContext.Provider value={
             { user: userStore,  product: productStore}
         }>
-            <Header/>
             <Routing/>
         </AppContext.Provider>
     );
